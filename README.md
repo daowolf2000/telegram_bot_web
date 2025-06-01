@@ -47,7 +47,7 @@ tar -xvf clo-1.7.0-stable-linux-x86_64.tar.gz
 sudo mv clo /usr/local/bin
 
 # Ключ авторизации можно взять на https://cloudpub.ru/dashboard
-./clo set token ВАШ_ТОКЕН
+clo set token ВАШ_ТОКЕН
 ```
 
 Для запуска используйте скрипт start.py (если с webapp) или bot.py (если без каталога сувениров)
