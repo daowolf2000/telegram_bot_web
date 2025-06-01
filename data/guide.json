@@ -1,0 +1,125 @@
+{
+  "Кафе": [
+    {
+      "name": "КофеМолка",
+      "phone": "+74232222666",
+      "address": "пр-т Партизанский, 44В",
+      "description": "Уютное кафе с домашней кухней и отличным кофе",
+      "links": [
+        {"url": "https://2gis.ru/vladivostok/search/КофеМолка", "text": "2GIS"}
+      ]
+    },
+    {
+      "name": "Trinity Irish Pub",
+      "phone": "+74232703770",
+      "address": "пр-т 100-летия Владивостока, 124А",
+      "description": "Ирландский паб в центре Владивостока с живой музыкой и авторской кухней",
+      "links": [
+        {"url": "https://2gis.ru/vladivostok/search/Trinity%20Irish%20Pub", "text": "2GIS"},
+        {"url": "https://vk.com/trinityirishpub", "text": "VK"}
+      ]
+    },
+    {
+      "name": "Zuma",
+      "phone": "+74232688188",
+      "address": "ул. Запорожская, 81А",
+      "description": "Паназиатский ресторан с дальневосточной и азиатской кухней",
+      "links": [
+        {"url": "https://novotel-vladivostok.com/", "text": "Официальный сайт"}
+      ]
+    },
+    {
+      "name": "Coffee Berry",
+      "phone": "+74232221122",
+      "address": "ул. Светланская, 45",
+      "description": "Современное кафе с большим выбором кофе и десертов",
+      "links": [
+        {"url": "https://2gis.ru/vladivostok/search/Coffee%20Berry", "text": "2GIS"}
+      ]
+    }
+  ],
+  "Рестораны": [
+    {
+      "name": "Farvater1860",
+      "phone": "+74232686060",
+      "address": "остров Русский, панорамный ресторан",
+      "description": "Авторская кухня с огромным выбором свежих морепродуктов",
+      "links": [
+        {"url": "https://farvater1860.ru/", "text": "Официальный сайт"}
+      ]
+    },
+    {
+      "name": "Tokyo Bar",
+      "phone": "+74232223344",
+      "address": "ул. Светланская, 12",
+      "description": "Японская кухня, роллы, суши и горячие блюда",
+      "links": [
+        {"url": "http://www.tokyo-bar.ru", "text": "Официальный сайт"}
+      ]
+    }
+  ],
+  "Такси": [
+    {
+      "name": "Такси Владивосток",
+      "phone": "+74232222222",
+      "description": "Надёжное такси с круглосуточным вызовом",
+      "links": [
+        {"url": "https://taxi-vladivostok.ru", "text": "Официальный сайт"}
+      ]
+    },
+    {
+      "name": "Яндекс.Такси",
+      "phone": "+78005553535",
+      "description": "Быстрый вызов такси через приложение",
+      "links": [
+        {"url": "https://taxi.yandex.ru/vladivostok", "text": "Официальный сайт"}
+      ]
+    },
+    {
+      "name": "Везёт Такси",
+      "phone": "+74232909090",
+      "description": "Популярное такси с удобным приложением",
+      "links": [
+        {"url": "https://vezet-taxi.ru", "text": "Официальный сайт"}
+      ]
+    }
+  ],
+  "Транспорт": [
+    {
+      "name": "Вокзал Владивосток",
+      "phone": "+74232220000",
+      "description": "Железнодорожный вокзал города",
+      "links": [
+        {"url": "https://vladivostoktrain.ru", "text": "Официальный сайт"}
+      ]
+    },
+    {
+      "name": "Аэропорт Владивосток",
+      "phone": "+74232455555",
+      "description": "Международный аэропорт Кневичи",
+      "links": [
+        {"url": "https://vvo.aero", "text": "Официальный сайт"}
+      ]
+    }
+  ],
+  "Достопримечательности": [
+    {
+      "name": "Океанариум Владивосток",
+      "phone": "+74232222233",
+      "address": "остров Русский",
+      "description": "Один из крупнейших океанариумов мира",
+      "links": [
+        {"url": "https://oceanarium.ru", "text": "Официальный сайт"}
+      ]
+    },
+    {
+      "name": "Нагорный парк",
+      "phone": "",
+      "address": "ул. Светланская",
+      "description": "Популярное место с панорамным видом на город",
+      "links": [
+        {"url": "https://2gis.ru/vladivostok/search/Нагорный%20парк", "text": "2GIS"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+events_data: data/events/events.json
+excursions_data: data/excursions/excursions.json
+log_file: bot.log
+logs_dir: logs
+materials_dir: data/materials
+operators_chat_id: -4843919491
+orders_dir: orders
+telegram_token: __Ваш_токен_от_бота__
+webapp_url: "Подставляется автоматически при запуске через start.py"
+

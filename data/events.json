@@ -1,0 +1,36 @@
+{
+  "2025-06-01": [
+    {
+      "id": "museum_tour_1",
+      "title": "Экскурсия по музею",
+      "time": "10:00",
+      "end_time": "12:00",
+      "description": "Обзорная экскурсия по главному залу музея компьютерных наук.",
+      "link": "https://example.com/museum"
+    },
+    {
+      "id": "painting_masterclass_1",
+      "title": "Мастер-класс по живописи",
+      "time": "14:00",
+      "end_time": "16:30",
+      "description": "Урок рисования для новичков."
+    }
+  ],
+  "2025-06-02": [
+    {
+      "id": "museum_tour_2",
+      "title": "Экскурсия по музею",
+      "time": "10:00",
+      "end_time": "12:00",
+      "description": "Обзорная экскурсия по главному залу музея компьютерных наук.",
+      "link": "https://example.com/museum"
+    },
+    {
+      "id": "painting_masterclass_2",
+      "title": "Мастер-класс по живописи",
+      "time": "14:00",
+      "end_time": "16:30",
+      "description": "Урок рисования для новичков."
+    }
+  ]
+}

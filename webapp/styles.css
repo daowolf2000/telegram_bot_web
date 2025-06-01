@@ -1,0 +1,213 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #222222;
+    --primary-color: #0088cc;
+    --button-bg: var(--primary-color);
+    --button-text: #ffffff;
+    --card-bg: #fefefe;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 8px 12px;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1 {
+    text-align: center;
+    margin: 12px 0 20px 0;
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
+  
+  #totalSum {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--card-bg);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0 0 15px 0;
+    text-align: center;
+    color: var(--primary-color);
+    padding: 10px 0 10px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  
+  
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    max-width: 100%;
+    margin: 0 auto 25px auto;
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+  
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--card-shadow);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 136, 204, 0.2);
+  }
+  
+  .card img {
+    width: 100%;
+    max-width: 260px; /* Увеличенный размер */
+    height: 160px;    /* Увеличенная высота */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 8px; /* Меньше отступ */
+    user-select: none;
+  }
+  
+  .card h3 {
+    margin: 6px 0 6px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-color);
+  }
+  
+  .card p.description {
+    font-size: 0.9rem;
+    color: #555555;
+    height: auto; /* Позволяет описанию занимать нужную высоту */
+    margin-bottom: 4px; /* Меньше отступ между описанием и ценой */
+    text-align: center;
+    user-select: none;
+  }
+  
+  .card .price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 10px; /* Немного меньше отступ */
+    color: var(--primary-color);
+  }
+  
+  .qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .qty-controls button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid #ccc; /* Светлая серая рамка */
+    border-radius: 6px;
+    background-color: #f5f5f5; /* Светло-серый фон */
+    color: #333;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    user-select: none;
+  }
+  
+  .qty-controls button:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+  }
+  
+  .qty-controls span {
+    min-width: 28px;
+    text-align: center;
+    font-size: 1rem;
+    user-select: none;
+  }
+  
+  form {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    background: var(--card-bg);
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--card-shadow);
+    box-sizing: border-box;
+  }
+  
+  label {
+    display: inline-block;
+    margin: 10px 20px 0 0;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+  
+  input[type="text"] {
+    padding: 8px 12px;
+    font-size: 1rem;
+    width: 260px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  button[type="submit"] {
+    margin-top: 25px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 320px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    user-select: none;
+  }
+  
+  button[type="submit"]:hover:not(:disabled) {
+    background-color: #006699;
+  }
+  
+  button[type="submit"]:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+  }
+  
+  /* Адаптив для мобильных экранов */
+  @media (max-width: 480px) {
+    .catalog {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 0 10px;
+    }
+  
+    input[type="text"] {
+      width: 100%;
+    }
+  
+    form {
+      padding: 15px 15px 25px 15px;
+    }
+  }
+  

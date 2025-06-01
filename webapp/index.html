@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Каталог рыбы — Telegram Web App</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Каталог сувениров</h1>
+  <div id="totalSum">Итого: 0 ₽</div>
+  <form id="orderForm">
+    <div class="catalog" id="catalog"></div>
+
+    <label for="fio">ФИО:</label>
+    <input type="text" id="fio" required>
+
+    <br />
+    <button type="submit">Оформить заказ</button>
+  </form>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.ready();
+
+    let products = [];
+    let currentOrder = {};
+
+    function updateTotalSum() {
+      let sum = 0;
+      products.forEach(p => {
+        const qty = currentOrder[p.id] || 0;
+        sum += qty * p.price;
+      });
+      document.getElementById('totalSum').textContent = `Итого: ${sum} ₽`;
+    }
+
+    function renderCatalog() {
+      const container = document.getElementById('catalog');
+      container.innerHTML = '';
+      products.forEach(p => {
+        const qty = currentOrder[p.id] || 0;
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${p.photo || 'https://via.placeholder.com/180x120?text=Фото+нет'}" alt="${p.name}">
+          <h3>${p.name}</h3>
+          <p class="description">${p.description || ''}</p>
+          <div class="price">${p.price} руб./${p.unit}</div>
+          <div class="qty-controls">
+            <button type="button" aria-label="Уменьшить количество" onclick="changeQty(${p.id}, -1)">➖</button>
+            <span id="qty_${p.id}">${qty}</span>
+            <button type="button" aria-label="Увеличить количество" onclick="changeQty(${p.id}, 1)">➕</button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function changeQty(id, delta) {
+      currentOrder[id] = (currentOrder[id] || 0) + delta;
+      if (currentOrder[id] < 0) currentOrder[id] = 0;
+      document.getElementById(`qty_${id}`).textContent = currentOrder[id];
+      updateTotalSum();
+    }
+
+    function loadProducts() {
+      fetch('products.json')
+        .then(res => res.json())
+        .then(data => {
+          products = data.products || data;
+          renderCatalog();
+          updateTotalSum();
+        })
+        .catch(() => alert('Ошибка загрузки каталога товаров'));
+    }
+
+    document.getElementById('orderForm').onsubmit = function(e) {
+      e.preventDefault();
+
+      let items = [];
+      for (const id in currentOrder) {
+        const qty = currentOrder[id];
+        if (qty > 0) {
+          const product = products.find(p => p.id == id);
+          if (product) {
+            items.push({
+              id: product.id,
+              name: product.name,
+              unit: product.unit,
+              qty,
+              price: product.price
+            });
+          }
+        }
+      }
+
+      if (items.length === 0) {
+        alert('Выберите хотя бы один товар!');
+        return;
+      }
+
+      const fio = document.getElementById('fio').value.trim();
+
+      if (!fio) {
+        alert('Пожалуйста, заполните ФИО');
+        return;
+      }
+
+      const order = {fio, items};
+      tg.sendData(JSON.stringify(order));
+      tg.close();
+    };
+
+    loadProducts();
+  </script>
+</body>
+</html>
